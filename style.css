@@ -807,6 +807,52 @@ ul {
     fill: currentColor;
 }
 
+/* ============================================================
+   BANDEAU D'APPEL À L'ACTION (CTA BAND)
+   ============================================================ */
+
+#cta-band {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Motif de fond */
+#cta-band::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: repeating-linear-gradient(
+        -45deg,
+        transparent,
+        transparent 60px,
+        rgba(255, 255, 255, 0.025) 60px,
+        rgba(255, 255, 255, 0.025) 61px
+    );
+}
+
+.cta-band-inner {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    flex-wrap: wrap;
+}
+
+.cta-band-text h2 {
+    font-family: var(--ff-display);
+    font-size: clamp(32px, 4vw, 52px);
+    color: var(--white);
+    margin-bottom: 8px;
+}
+
+.cta-band-text p {
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 16px;
+}
+
 
 
 
