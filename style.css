@@ -562,3 +562,126 @@ ul {
     stroke: var(--accent2);
     fill: none;
 }
+
+/* ============================================================
+   BARRE DE CONFIANCE (TRUST BAR)
+   ============================================================ */
+
+#trust {
+    background: var(--navy);
+    padding: 28px 0;
+    border-bottom: 2px solid rgba(192, 105, 74, 0.22);
+}
+
+.trust-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.trust-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.trust-item svg {
+    width: 28px;
+    height: 28px;
+    fill: var(--accent);
+    flex-shrink: 0;
+}
+
+.trust-item-text strong {
+    display: block;
+    font-family: var(--ff-cond);
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: var(--white);
+}
+
+.trust-item-text span {
+    font-size: 12px;
+    color: var(--gray);
+}
+
+/* ============================================================
+   SECTION À PROPOS (INTRO)
+   ============================================================ */
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.about-img-wrap {
+    position: relative;
+}
+
+.about-img-main {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Badge flottant sur l'image */
+.about-img-badge {
+    position: absolute;
+    bottom: -28px;
+    right: -28px;
+    background: var(--accent);
+    color: var(--white);
+    padding: 24px 28px;
+    border-radius: var(--radius);
+    text-align: center;
+    box-shadow: var(--shadow);
+}
+
+.about-img-badge-num {
+    font-family: var(--ff-display);
+    font-size: 52px;
+    line-height: 1;
+}
+
+.about-img-badge-text {
+    font-family: var(--ff-cond);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.about-content {
+    padding-bottom: 32px;
+}
+
+.about-list {
+    margin: 28px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.about-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 16px;
+    color: var(--text);
+}
+
+.about-list li svg {
+    width: 20px;
+    height: 20px;
+    fill: var(--accent);
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
