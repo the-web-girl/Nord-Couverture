@@ -66,3 +66,117 @@ a {
 ul {
     list-style: none;
 }
+
+/* ============================================================
+   MISE EN PAGE GÉNÉRALE
+   ============================================================ */
+
+/* Conteneur centré avec largeur maximale */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.section {
+    padding: 80px 0;
+}
+
+.section-sm {
+    padding: 50px 0;
+}
+
+/* ============================================================
+   TYPOGRAPHIE DES SECTIONS
+   ============================================================ */
+
+.section-label {
+    font-family: var(--ff-cond);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 12px;
+}
+
+.section-title {
+    font-family: var(--ff-display);
+    font-size: clamp(36px, 5vw, 56px); /* Taille fluide entre 36px et 56px */
+    letter-spacing: 1px;
+    line-height: 1.05;
+    color: var(--navy);
+    margin-bottom: 20px;
+}
+
+.section-title.white {
+    color: var(--white);
+}
+
+.section-subtitle {
+    font-size: 17px;
+    color: var(--muted);
+    max-width: 560px;
+    line-height: 1.7;
+}
+
+.section-subtitle.white {
+    color: rgba(255, 255, 255, 0.72);
+}
+
+/* ============================================================
+   BOUTONS
+   ============================================================ */
+
+/* Style de base commun à tous les boutons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 32px;
+    font-family: var(--ff-cond);
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    border-radius: var(--radius);
+    transition: var(--transition);
+    white-space: nowrap;
+}
+
+/* Bouton principal (orange) */
+.btn-primary {
+    background: var(--accent);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background: var(--accent2);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(192, 105, 74, 0.38);
+}
+
+/* Bouton avec contour transparent */
+.btn-outline {
+    background: transparent;
+    color: var(--white);
+    border: 2px solid rgba(255, 255, 255, 0.45);
+}
+
+.btn-outline:hover {
+    border-color: var(--accent2);
+    color: var(--accent2);
+}
+
+/* Bouton sombre (bleu marine) */
+.btn-dark {
+    background: var(--navy);
+    color: var(--white);
+}
+
+.btn-dark:hover {
+    background: var(--blue-mid);
+    transform: translateY(-2px);
+}
