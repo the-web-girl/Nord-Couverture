@@ -1,0 +1,68 @@
+/* ============================================================
+   RESET & VARIABLES GLOBALES
+   ============================================================ */
+
+/* Supprime les marges et paddings par défaut sur tous les éléments */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Variables CSS réutilisables dans tout le fichier */
+:root {
+    /* Couleurs */
+    --navy:     #1a2540;
+    --navy-mid: #223060;
+    --blue:     #1e3a70;
+    --blue-mid: #2a4a8a;
+    --accent:   #c0694a;
+    --accent2:  #d4825e;
+    --steel:    #5a6e82;
+    --light:    #f7f3f0;
+    --white:    #ffffff;
+    --gray:     #8a9ab0;
+    --text:     #1a2030;
+    --muted:    #6a7a8e;
+
+    /* Polices */
+    --ff-display: 'Bebas Neue', sans-serif;
+    --ff-cond:    'Barlow Condensed', sans-serif;
+    --ff-body:    'Barlow', sans-serif;
+
+    /* Effets */
+    --radius:     4px;
+    --shadow:     0 4px 24px rgba(26, 37, 64, 0.15);
+    --shadow-lg:  0 12px 48px rgba(26, 37, 64, 0.22);
+    --transition: 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* ============================================================
+   STYLES DE BASE
+   ============================================================ */
+
+html {
+    scroll-behavior: smooth; /* Défilement doux lors des clics sur les ancres */
+}
+
+body {
+    font-family: var(--ff-body);
+    color: var(--text);
+    background: var(--white);
+    overflow-x: hidden; /* Empêche le défilement horizontal */
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
