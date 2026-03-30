@@ -685,3 +685,173 @@ ul {
     margin-top: 2px;
 }
 
+/* ============================================================
+   SECTION SERVICES
+   ============================================================ */
+
+#services {
+    background: var(--light);
+}
+
+.services-header {
+    text-align: center;
+    margin-bottom: 56px;
+}
+
+.services-header .section-subtitle {
+    margin: 0 auto;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+/* Carte de service */
+.service-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: 0 2px 16px rgba(26, 37, 64, 0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+}
+
+.service-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+}
+
+.service-card-img {
+    height: 200px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.service-card-body {
+    padding: 24px;
+}
+
+.service-icon {
+    width: 44px;
+    height: 44px;
+    background: rgba(192, 105, 74, 0.1);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+}
+
+.service-icon svg {
+    width: 22px;
+    height: 22px;
+    fill: var(--accent);
+}
+
+.service-card h3 {
+    font-family: var(--ff-cond);
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: var(--navy);
+    margin-bottom: 10px;
+}
+
+.service-card p {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.65;
+}
+
+/* Étiquette de catégorie sur l'image */
+.service-card-tag {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    background: var(--navy);
+    color: var(--accent2);
+    font-family: var(--ff-cond);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 2px;
+}
+
+/* Lien "en savoir plus" avec flèche animée */
+.service-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 16px;
+    font-family: var(--ff-cond);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--accent);
+    transition: gap 0.2s, color 0.2s;
+}
+
+.service-link:hover {
+    color: var(--accent2);
+    gap: 10px;
+}
+
+.service-link svg {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+}
+
+
+
+
+/* ============================================================
+   ANIMATIONS D'APPARITION (REVEAL)
+   ============================================================ */
+
+/* Apparition depuis le bas */
+.reveal {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.65s ease, transform 0.65s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: none;
+}
+
+/* Apparition depuis la gauche */
+.reveal-left {
+    opacity: 0;
+    transform: translateX(-32px);
+    transition: opacity 0.65s ease, transform 0.65s ease;
+}
+
+.reveal-left.visible {
+    opacity: 1;
+    transform: none;
+}
+
+/* Apparition depuis la droite */
+.reveal-right {
+    opacity: 0;
+    transform: translateX(32px);
+    transition: opacity 0.65s ease, transform 0.65s ease;
+}
+
+.reveal-right.visible {
+    opacity: 1;
+    transform: none;
+}
+
+/* Délais d'animation décalés */
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
+.delay-4 { transition-delay: 0.4s; }
