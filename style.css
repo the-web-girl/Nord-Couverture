@@ -180,3 +180,200 @@ ul {
     background: var(--blue-mid);
     transform: translateY(-2px);
 }
+
+/* ============================================================
+   EN-TÊTE (HEADER) ET NAVIGATION
+   ============================================================ */
+
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: transparent;
+    transition: background 0.4s, box-shadow 0.4s;
+}
+
+/* Header avec fond sombre au défilement */
+#header.scrolled {
+    background: var(--navy);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.28);
+}
+
+.nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 72px;
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-icon {
+    width: 42px;
+    height: 42px;
+    background: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2px;
+    flex-shrink: 0;
+}
+
+.logo-icon svg {
+    width: 22px;
+    height: 22px;
+    fill: var(--white);
+}
+
+.logo-text {
+    line-height: 1.2;
+}
+
+.logo-name {
+    font-family: var(--ff-display);
+    font-size: 22px;
+    letter-spacing: 1px;
+    color: var(--white);
+}
+
+.logo-sub {
+    font-family: var(--ff-cond);
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent2);
+}
+
+/* Liens de navigation */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+}
+
+.nav-links a {
+    font-family: var(--ff-cond);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.85);
+    transition: color 0.2s;
+    position: relative;
+}
+
+/* Soulignement animé au survol */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--accent2);
+    transform: scaleX(0);
+    transition: transform 0.2s;
+}
+
+.nav-links a:hover {
+    color: var(--accent2);
+}
+
+.nav-links a:hover::after {
+    transform: scaleX(1);
+}
+
+/* Zone CTA (appel à l'action) dans la nav */
+.nav-cta {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.nav-phone {
+    font-family: var(--ff-cond);
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.2s;
+}
+
+.nav-phone:hover {
+    color: var(--accent2);
+}
+
+.nav-phone .icon {
+    width: 18px;
+    height: 18px;
+    fill: var(--accent);
+    flex-shrink: 0;
+}
+
+/* Bouton hamburger (menu mobile) */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 8px;
+    background: none;
+    border: none;
+}
+
+.hamburger span {
+    display: block;
+    width: 26px;
+    height: 2px;
+    background: var(--white);
+    transition: var(--transition);
+}
+
+/* Menu mobile plein écran */
+.mobile-menu {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: var(--navy);
+    z-index: 999;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+}
+
+.mobile-menu.open {
+    display: flex;
+}
+
+.mobile-menu a {
+    font-family: var(--ff-display);
+    font-size: 36px;
+    color: var(--white);
+    letter-spacing: 2px;
+}
+
+.mobile-menu a:hover {
+    color: var(--accent2);
+}
+
+.mobile-close {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--white);
+    font-size: 32px;
+}
