@@ -95,3 +95,27 @@ document.querySelectorAll('a[href^="#"]').forEach(lien => {
   });
 });
 
+// ─────────────────────────────────────────────
+// 5. ENVOI DU FORMULAIRE DE CONTACT
+// ─────────────────────────────────────────────
+// Cette fonction est appelée quand l'utilisateur clique sur
+// le bouton "Envoyer" du formulaire (via onclick="submitForm()").
+// Elle valide les champs obligatoires avant de confirmer l'envoi.
+
+function submitForm() {
+
+  // On récupère les valeurs saisies et on supprime les espaces inutiles
+  // en début et fin (.trim()) pour éviter les faux positifs
+  const prenom    = document.getElementById('fname').value.trim();
+  const telephone = document.getElementById('phone').value.trim();
+
+  // Validation : les deux champs sont obligatoires
+  if (!prenom || !telephone) {
+    alert('Merci de renseigner au minimum votre prénom et votre numéro de téléphone.');
+    return; // On arrête ici si la validation échoue
+  }
+
+  // Si tout est valide : on cache le formulaire et on affiche le message de succès
+  document.getElementById('contactFormWrap').style.display = 'none';
+  document.getElementById('formSuccess').style.display    = 'block';
+}
