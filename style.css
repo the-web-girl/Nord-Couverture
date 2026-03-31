@@ -1396,6 +1396,69 @@ ul {
     gap: 12px;
 }
 
+/* Bouton de réseau social */
+.social-btn {
+    width: 38px;
+    height: 38px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+
+.social-btn:hover {
+    background: var(--accent);
+}
+
+.social-btn svg {
+    width: 16px;
+    height: 16px;
+    fill: var(--white);
+}
+
+.footer-col h4 {
+    font-family: var(--ff-cond);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--white);
+    margin-bottom: 20px;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-links a {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
+    transition: color 0.2s;
+}
+
+.footer-links a:hover {
+    color: var(--accent2);
+}
+
+/* Barre du bas du footer */
+.footer-bottom {
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.footer-bottom p {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.4);
+}
+
 
 
 /* ============================================================
