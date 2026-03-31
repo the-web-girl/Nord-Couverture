@@ -69,3 +69,29 @@ document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => 
   observer.observe(el);
 });
 
+// ─────────────────────────────────────────────
+// 4. DÉFILEMENT FLUIDE (SMOOTH SCROLL)
+// ─────────────────────────────────────────────
+// Par défaut, cliquer sur un lien ancre (#section) fait sauter
+// brutalement vers la cible. Ce code remplace ce comportement
+// par un défilement animé et fluide.
+
+// On sélectionne tous les liens dont l'href commence par "#"
+// (ex : <a href="#contact">)
+document.querySelectorAll('a[href^="#"]').forEach(lien => {
+
+  lien.addEventListener('click', evenement => {
+
+    // On cherche l'élément cible correspondant au href du lien
+    const cible = document.querySelector(lien.getAttribute('href'));
+
+    if (cible) {
+      // On bloque le comportement natif du navigateur (saut brutal)
+      evenement.preventDefault();
+
+      // On fait défiler doucement jusqu'à la cible
+      cible.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+
