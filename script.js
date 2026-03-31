@@ -38,3 +38,34 @@ document.querySelectorAll('.mobile-nav-link').forEach(lien => {
   });
 });
 
+// ─────────────────────────────────────────────
+// 3. ANIMATION D'APPARITION AU DÉFILEMENT (SCROLL REVEAL)
+// ─────────────────────────────────────────────
+// L'IntersectionObserver surveille des éléments HTML et déclenche
+// une fonction dès qu'ils deviennent visibles dans la fenêtre.
+// Ici, on ajoute la classe "visible" pour déclencher une animation CSS.
+
+// Création de l'observateur.
+// "threshold: 0.12" signifie : déclencher quand 12% de l'élément est visible.
+const observer = new IntersectionObserver((entries) => {
+
+  entries.forEach(entry => {
+
+    // Si l'élément est actuellement visible à l'écran...
+    if (entry.isIntersecting) {
+
+      // ...on lui ajoute la classe "visible" (déclenche l'animation CSS)
+      entry.target.classList.add('visible');
+
+      // ...et on arrête de l'observer : inutile de re-déclencher l'animation
+      observer.unobserve(entry.target);
+    }
+  });
+
+}, { threshold: 0.12 });
+
+// On applique l'observateur à tous les éléments animables de la page
+document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => {
+  observer.observe(el);
+});
+
