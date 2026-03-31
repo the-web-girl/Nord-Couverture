@@ -13,3 +13,28 @@ window.addEventListener('scroll', () => {
   header.classList.toggle('scrolled', window.scrollY > 60);
 });
 
+// ─────────────────────────────────────────────
+// 2. MENU MOBILE (HAMBURGER)
+// ─────────────────────────────────────────────
+// Le menu mobile s'ouvre et se ferme grâce à la classe CSS "open".
+// Trois cas de fermeture : bouton de fermeture, clic sur un lien.
+
+// Ouvre le menu quand on clique sur l'icône hamburger (≡)
+document.getElementById('hamburger').addEventListener('click', () => {
+  document.getElementById('mobileMenu').classList.add('open');
+});
+
+// Ferme le menu quand on clique sur le bouton "×" (croix de fermeture)
+document.getElementById('mobileClose').addEventListener('click', () => {
+  document.getElementById('mobileMenu').classList.remove('open');
+});
+
+// Ferme aussi le menu quand on clique sur n'importe quel lien de navigation.
+// querySelectorAll retourne tous les éléments ayant la classe "mobile-nav-link",
+// et forEach permet d'ajouter l'événement sur chacun d'eux.
+document.querySelectorAll('.mobile-nav-link').forEach(lien => {
+  lien.addEventListener('click', () => {
+    document.getElementById('mobileMenu').classList.remove('open');
+  });
+});
+
